@@ -9,4 +9,8 @@
     <PackageReference Include="OrchardCore.Logging.NLog" Version="1.0.0-rc2-14210" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OrchardCore.LETS\LETS.csproj" />
+  </ItemGroup>
+
 </Project>

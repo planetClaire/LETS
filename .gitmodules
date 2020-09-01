@@ -1,0 +1,4 @@
+[submodule "OrchardCore.LETS"]
+	path = OrchardCore.LETS
+	url = W:/Projects/FreoLETS/LETS/OrchardCore.LETS
+	branch = master
