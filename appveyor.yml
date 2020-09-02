@@ -7,23 +7,8 @@ branches:
     - dev
     - /release\/.*/
 
-environment:
-  priv_key:
-    secure: 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
-
 install:
-  - echo "-----BEGIN RSA PRIVATE KEY-----" > $HOME/.ssh/id_rsa
-  - echo "${priv_key}" | tr " " "\n" >> $HOME/.ssh/id_rsa
-  - echo "-----END RSA PRIVATE KEY-----" >> $HOME/.ssh/id_rsa
-  - cat $HOME/.ssh/id_rsa
   - git submodule update --init --recursive
-
-# clone_script:
-#   - cmd: >-
-#       git clone -q --branch=%APPVEYOR_REPO_BRANCH% https://github.com/%APPVEYOR_REPO_NAME%.git %APPVEYOR_BUILD_FOLDER%
-#       && cd %APPVEYOR_BUILD_FOLDER%
-#       && git checkout -qf %APPVEYOR_REPO_COMMIT%
-#       && git submodule update --init --recursive
 
 build_script:
 - ps: dotnet build -c Release
