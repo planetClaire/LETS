@@ -19,10 +19,10 @@ install:
 - git submodule -q update --init --recursive
 
 build_script:
-- ps: dotnet build -c Release
+- dotnet build -c Release
 
 test_script:
-- ps: dotnet test -c Release
-- ps: cd .\OrchardCore.LETS\Tests\Functional
-- ps: test-setup.cmd
-- ps: test-run.cmd
+- dotnet test -c Release
+- cd .\OrchardCore.LETS\Tests\Functional
+- test-setup.cmd
+- test-run.cmd
