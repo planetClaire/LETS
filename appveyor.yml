@@ -24,4 +24,5 @@ build_script:
 test_script:
 - ps: dotnet test -c Release
 - ps: cd .\OrchardCore.LETS\Tests\Functional
-- ps: npm run test
+- ps: test-setup.cmd
+- ps: test-run.cmd
