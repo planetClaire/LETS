@@ -1,0 +1,4 @@
+[submodule "OrchardCore.LETS"]
+	path = OrchardCore.LETS
+	url = git@github.com:planetClaire/OrchardCore.LETS.git
+	branch = master
