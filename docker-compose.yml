@@ -1,0 +1,7 @@
+﻿version: "3.7"
+
+services:
+  orchardcorelets:
+    build: .
+    ports:
+        - "8081:80"    
