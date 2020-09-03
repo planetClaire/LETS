@@ -13,20 +13,19 @@ environment:
   priv_key:
     secure: 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
 
-stack: node 9
-
 install:
 - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
 - ps: $fileContent += $env:priv_key.Replace(' ', "`n")
 - ps: $fileContent += "`n-----END RSA PRIVATE KEY-----`n"
 - ps: Set-Content c:\users\appveyor\.ssh\id_rsa $fileContent
 - git submodule -q update --init --recursive
+- Install-Product node 'LTS'
 
 build_script:
 - dotnet build -c Release
 
 test_script:
-- dotnet test -c Release
+- dotnet test -c Release --no-build
 - cd .\OrchardCore.LETS\Tests\Functional
 - npm install
 - npm run test
