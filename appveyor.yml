@@ -9,6 +9,9 @@ branches:
     - dev
     - /release\/.*/
 
+cache:
+- node_modules -> **\package.json
+
 install:
 - ps: $IsMasterBranch = ($env:APPVEYOR_REPO_BRANCH -eq "master" -And -not $env:APPVEYOR_PULL_REQUEST_NUMBER)
 - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
@@ -28,8 +31,12 @@ test_script:
 - npm run test
 
 deploy_script:
-- cd .\
-- docker-compose build
-- docker tag lets_orchardcorelets %DOCKER_USER%/lets_orchardcorelets:latest
-- echo|set /p="%DOCKER_PASS%" | docker login --username %DOCKER_USER% --password-stdin
-- docker push %DOCKER_USER%/lets_orchardcorelets:latest
+- ps: |
+    if ($IsMasterBranch)
+    {
+      cd .\
+      docker-compose build 2>&1 | %{ "$_" }
+      docker tag lets_orchardcorelets $env:DOCKER_USER/lets_orchardcorelets:latest
+      echo "$env:DOCKER_PASS" | docker login -u="$env:DOCKER_USER" --password-stdin
+      docker push $env:DOCKER_USER/lets_orchardcorelets:latest
+    }
