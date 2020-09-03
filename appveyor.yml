@@ -18,8 +18,8 @@ install:
 - ps: $fileContent += $env:priv_key.Replace(' ', "`n")
 - ps: $fileContent += "`n-----END RSA PRIVATE KEY-----`n"
 - ps: Set-Content c:\users\appveyor\.ssh\id_rsa $fileContent
+- ps: Install-Product node 'LTS'
 - git submodule -q update --init --recursive
-- Install-Product node 'LTS'
 
 build_script:
 - dotnet build -c Release
