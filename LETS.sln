@@ -11,12 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LETS.Tests", "OrchardCore.L
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{B679820B-78A1-4415-937A-5C4660A08544}"
 	ProjectSection(SolutionItems) = preProject
-		.dockerignore = .dockerignore
 		appveyor.yml = appveyor.yml
-		docker-compose.yml = docker-compose.yml
-		Dockerfile = Dockerfile
-		NuGet.config = NuGet.config
 	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D37F8AA5-40EE-4492-936D-9BFA8251606F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +34,10 @@ Global
 		{FC762025-93DE-4B9E-81BD-4E71BFA019D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC762025-93DE-4B9E-81BD-4E71BFA019D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC762025-93DE-4B9E-81BD-4E71BFA019D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D37F8AA5-40EE-4492-936D-9BFA8251606F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D37F8AA5-40EE-4492-936D-9BFA8251606F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D37F8AA5-40EE-4492-936D-9BFA8251606F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D37F8AA5-40EE-4492-936D-9BFA8251606F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

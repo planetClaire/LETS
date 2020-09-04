@@ -2,9 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>65c1068c-99cb-4b87-8061-23ea91701397</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.0.0-rc2-14210" />
     <PackageReference Include="OrchardCore.Logging.NLog" Version="1.0.0-rc2-14210" />
   </ItemGroup>

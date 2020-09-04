@@ -36,7 +36,7 @@ deploy_script:
     {
       cd .\
       docker-compose build 2>&1 | %{ "$_" }
-      docker tag lets_orchardcorelets $env:DOCKER_USER/lets_orchardcorelets:latest
+      docker tag letsweb $env:DOCKER_USER/letsweb:latest
       echo "$env:DOCKER_PASS" | docker login -u="$env:DOCKER_USER" --password-stdin
-      docker push $env:DOCKER_USER/lets_orchardcorelets:latest
+      docker push $env:DOCKER_USER/letsweb:latest
     }

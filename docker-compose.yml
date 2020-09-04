@@ -1,7 +1,8 @@
-﻿version: "3.7"
+version: '3.7'
 
 services:
-  orchardcorelets:
-    build: .
-    ports:
-        - "8081:80"    
+  lets.web:
+    image: ${DOCKER_REGISTRY-}letsweb
+    build:
+      context: .
+      dockerfile: LETS.Web/Dockerfile
