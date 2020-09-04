@@ -22,10 +22,10 @@ install:
 - git submodule -q update --init --recursive
 
 build_script:
-- dotnet build -c Release
+- dotnet build -c Release LETS.Web\LETS.Web.csproj
 
 test_script:
-- dotnet test -c Release --no-build
+- dotnet test -c Release OrchardCore.LETS\Tests\LETS.Tests.csproj
 - cd .\OrchardCore.LETS\Tests\Functional
 - npm install
 - npm run test
