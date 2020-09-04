@@ -35,8 +35,7 @@ deploy_script:
     if ($IsMasterBranch)
     {
       cd .\
-      docker-compose build 2>&1 | %{ "$_" }
-      docker tag letsweb $env:DOCKER_USER/letsweb:latest
+      docker build -t $env:DOCKER_USER/letsweb:latest -f LETS.Web/Dockerfile .
       echo "$env:DOCKER_PASS" | docker login -u="$env:DOCKER_USER" --password-stdin
       docker push $env:DOCKER_USER/letsweb:latest
     }
