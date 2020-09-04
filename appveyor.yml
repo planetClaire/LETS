@@ -35,9 +35,9 @@ deploy_script:
 - ps: |
     if ($IsMasterBranch)
     {
-      cd .\
+      cd $env:APPVEYOR_BUILD_FOLDER
       dir
-      docker build -t $env:DOCKER_USER/letsweb:latest -f LETS.Web\Dockerfile .
+      docker build -t $env:DOCKER_USER/letsweb:latest -f $env:APPVEYOR_BUILD_FOLDER\LETS.Web\Dockerfile .
       echo "$env:DOCKER_PASS" | docker login -u="$env:DOCKER_USER" --password-stdin
       docker push $env:DOCKER_USER/letsweb:latest
     }
