@@ -29,12 +29,12 @@ test_script:
 - cd .\OrchardCore.LETS\Tests\Functional
 - npm install
 - npm run test
+- cd .\
 
 deploy_script:
 - ps: |
     if ($IsMasterBranch)
     {
-      cd .\
       docker build -t $env:DOCKER_USER/letsweb:latest -f LETS.Web\Dockerfile .
       echo "$env:DOCKER_PASS" | docker login -u="$env:DOCKER_USER" --password-stdin
       docker push $env:DOCKER_USER/letsweb:latest
