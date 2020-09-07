@@ -30,4 +30,8 @@ jobs:
     - name: Functional tests
       working-directory: ./OrchardCore.LETS/Tests/Functional
       run: npm install && npm test
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v1
+      with:
+        repository: planetclaire/letsweb
 
