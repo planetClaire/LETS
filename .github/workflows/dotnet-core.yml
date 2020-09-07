@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build -c Release LETS.Web/LETS.Web.csproj
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test -c Release OrchardCore.LETS/Tests/LETS.Tests.csproj
