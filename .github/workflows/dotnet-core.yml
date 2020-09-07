@@ -19,6 +19,8 @@ jobs:
         dotnet-version: 3.1.301
     - name: Checkout submodules
       uses: textbook/git-checkout-submodule-action@master
+      with:
+        remote: true
     - name: Build
       run: dotnet build -c Release LETS.Web\LETS.Web.csproj
     - name: Test
