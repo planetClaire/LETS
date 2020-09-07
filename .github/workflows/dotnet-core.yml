@@ -12,12 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: textbook/git-checkout-submodule-action@2.1.1
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
+    - name: Checkout submodules
+      uses: textbook/git-checkout-submodule-action@master
     - name: Build
       run: dotnet build -c Release LETS.Web\LETS.Web.csproj
     - name: Test
