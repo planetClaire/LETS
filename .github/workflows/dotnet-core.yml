@@ -23,11 +23,11 @@ jobs:
       run: dotnet build -c Release LETS.Web/LETS.Web.csproj
     - name: Test
       run: dotnet test -c Release OrchardCore.LETS/Tests/LETS.Tests.csproj
-    - name: Functional tests
+    - name: Setup node
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm install
+    - name: Functional tests
       working-directory: ./OrchardCore.LETS/Tests/Functional
-    - run: npm test
-      working-directory: ./OrchardCore.LETS/Tests/Functional
+      run: npm install && npm test
+
