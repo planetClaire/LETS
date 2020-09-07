@@ -1,6 +1,6 @@
 version: 1.0.{build}
 
-image: Visual Studio 2019
+image: Ubuntu2004
 
 skip_branch_with_pr: true
 branches:
@@ -33,11 +33,8 @@ test_script:
 
 deploy_script:
 - ps: |
-    if ($IsMasterBranch)
-    {
       cd $env:APPVEYOR_BUILD_FOLDER
       dir
       docker build -t $env:DOCKER_USER/letsweb:latest -f $env:APPVEYOR_BUILD_FOLDER\LETS.Web\Dockerfile . 2>&1 | %{ "$_" }
       echo "$env:DOCKER_PASS" | docker login -u="$env:DOCKER_USER" --password-stdin
       docker push $env:DOCKER_USER/letsweb:latest
-    }
