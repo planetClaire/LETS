@@ -2,7 +2,5 @@ version: '3.7'
 
 services:
   lets.web:
-    image: ${DOCKER_REGISTRY-}letsweb
-    build:
-      context: .
-      dockerfile: LETS.Web/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
