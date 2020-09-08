@@ -9,11 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LETS", "OrchardCore.LETS\LE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LETS.Tests", "OrchardCore.LETS\Tests\LETS.Tests.csproj", "{FC762025-93DE-4B9E-81BD-4E71BFA019D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{B679820B-78A1-4415-937A-5C4660A08544}"
-	ProjectSection(SolutionItems) = preProject
-		appveyor.yml = appveyor.yml
-	EndProjectSection
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D37F8AA5-40EE-4492-936D-9BFA8251606F}"
 EndProject
 Global
